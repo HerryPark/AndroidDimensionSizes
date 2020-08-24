@@ -1,0 +1,131 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+
+group = rootProject.ext.packageName
+version = rootProject.ext.libraryVersionName
+
+// Local aar info
+install {
+    repositories.mavenInstaller {
+        pom.project {
+            name project.name
+            description rootProject.ext.description
+            url rootProject.ext.websiteUrl
+            inceptionYear '2020' // release date
+
+            // gradle dependency
+            packaging 'aar'
+            groupId rootProject.ext.packageName
+            artifactId project.name
+            version rootProject.ext.libraryVersionName // :0.0.1-alpha
+
+            licenses {
+                license {
+                    name 'The Apache Software License, Version 2.0'
+                    url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    distribution 'repo'
+                }
+            }
+
+            scm { // Optional setting
+                connection rootProject.ext.githubRepoUrl
+                developerConnection rootProject.ext.githubRepoUrl
+                url rootProject.ext.websiteUrl
+            }
+
+            developers { // Optional setting
+                developer {
+                    id 'herrydev'
+                    name 'herry.park'
+                    email 'herry6900@gmail.com'
+                }
+            }
+        }
+    }
+}
+
+bintray {
+    user = project.hasProperty('bintrayUser') ? project.property('bintrayUser') : System.getenv('BINTRAY_USER')
+    key = project.hasProperty('bintrayApiKey') ? project.property('bintrayApiKey') : System.getenv('BINTRAY_API_KEY')
+
+    configurations = ['archives'] // When uploading configuration files
+
+    publish = true // [Default: false] Whether version should be auto published after an upload
+
+    pkg {
+        repo = 'Android-Dimension-Sizes' // Repository name (Created in the repository Bintray site)
+        name = project.name // module name
+        userOrg = user // An optional organization name when the repo belongs to one of the user's orgs
+        desc = 'Android size dimensions library' // Optional
+        licenses = ['Apache-2.0']
+
+        vcsUrl = rootProject.ext.githubRepoUrl
+        websiteUrl = rootProject.ext.websiteUrl
+        // issueTrackerUrl = '' // Optional
+
+        labels = ['aar', 'android', 'example'] // Optional
+        publicDownloadNumbers = true
+
+        githubRepo = rootProject.ext.githubRepo // Optional Github repository
+        githubReleaseNotesFile = 'CONTRIBUTING.md' // Optional Github readme file
+
+        version {
+            name = version // The name of your library project
+            desc = 'Android size dimensions' // Optional - Version-specific description'
+            released  = new Date() // Optional - Date of the version release. 2 possible values: date in the format of 'yyyy-MM-dd'T'HH:mm:ss.SSSZZ' OR a java.util.Date instance
+            vcsTag = version
+        }
+    }
+}
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.libraryVersionName
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+}
+
+// JCenter publish
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+
+// Optional docs
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+
+// Optional javadoc
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts {
+//    archives javadocJar // Optional
+    archives sourcesJar
+}
+
+task findConventions {
+    println project.getConvention()
+}
