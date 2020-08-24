@@ -54,7 +54,7 @@ bintray {
     publish = true // [Default: false] Whether version should be auto published after an upload
 
     pkg {
-        repo = 'Android-Dimension-Sizes' // Repository name (Created in the repository Bintray site)
+        repo = 'library' // Repository name (Created in the repository Bintray site)
         name = project.name // module name
         userOrg = user // An optional organization name when the repo belongs to one of the user's orgs
         desc = 'Android size dimensions library' // Optional

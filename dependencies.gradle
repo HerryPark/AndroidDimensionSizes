@@ -9,7 +9,7 @@ ext {
     libraryVersionName = '1.0.0-beta'
 
     // Bintray setting info
-    repositoryName = 'Android-Dimension-Sizes' // Bintray repository name
+    repositoryName = 'library' // Bintray repository name
     packageName = 'com.herry.dimensize' // module name ex) compile
 
     description = 'Android Dimension Sizes'
@@ -17,6 +17,6 @@ ext {
     websiteUrl = 'https://github.com/HerryPark/AndroidDimensionSizes' // site url
     githubRepoUrl = 'https://github.com/HerryPark/AndroidDimensionSizes.git' // git repo url
 
-    githubRepo = 'HerryPark/AndroidDimensionSizes.git'
+    githubRepo = 'HerryPark/AndroidDimensionSizes'
     githubReleaseNotesFile = 'CHANGELOG.md'
 }
