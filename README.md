@@ -13,7 +13,7 @@ Android application을 개발하다보면 iOS와 달리 많은 종류의 target 
 미리 정해 놓은 dimension을 이용하여 layout 하나로 해상도가 다른 device를 대응합니다. 즉 Design Guide의 dp 값을 @dimen/sizeXX로 설정하여 사용합니다. 예를 들어 design guide에서 100dp는 @dimen/size100을 사용합니다. 
 
 ### Change Log
-[!change log](/CHANGELOG.md)
+![change log](/CHANGELOG.md)
 
 ### 사용 방법
 #### Download Library
@@ -107,13 +107,16 @@ Android application을 개발하다보면 iOS와 달리 많은 종류의 target 
 
   * Device: size = 1080x2020 (px), densityDpi = 480, diemen/size120 = 360px
   
-    ![1080x2020 480dpi portrait](/screenshots/1080x2020_480dpi_portrait.jpg){: width="25%" height="25%"}
-    
-    ![1080x2020 480dpi landscape](/screenshots/1080x2020_480dpi_landscape.jpg){: width="50%" height="50%"}
+    <P>
+      <img src="/screenshots/1080x2020_480dpi_portrait.jpg" alt="1080x2020 480dpi portrait" width="25%" height="25%">
+      <img src="/screenshots/1080x2020_480dpi_landscape.jpg" alt="1080x2020 480dpi landscape" width="50%" height="50%">
+    </p>
    
   * Device: size = 800x1232 (px), densityDpi = 160, diemen/size120 = 267px
   
-    ![800x1232 160dpi portrait](/screenshots/800x1232_160dpi_portrait.png){: width="25%" height="25%"}
+    <P>
+      <img src="/screenshots/800x1232_160dpi_portrait.png" alt="800x1232 160dpi portrait" width="25%" height="25%">
+      <img src="/screenshots/800x1232_160dpi_landscape.png" alt="800x1232 160dpi landscape" width="50%" height="50%">
+    </p>
 
-    ![800x1232 160dpi landscape](/screenshots/800x1232_160dpi_landscape.png){: width="50%" height="50%"}
       
