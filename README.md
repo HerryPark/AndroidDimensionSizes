@@ -107,13 +107,13 @@ Android application을 개발하다보면 iOS와 달리 많은 종류의 target 
 
   * Device: size = 1080x2020 (px), densityDpi = 480, diemen/size120 = 360px
   
-    ![1080x2020 480dpi portrait](/screenshots/1080x2020_480dpi_portrait.jpg)
+    ![1080x2020 480dpi portrait](/screenshots/1080x2020_480dpi_portrait.jpg){: width="25%" height="25%"}
     
-    ![1080x2020 480dpi landscape](/screenshots/1080x2020_480dpi_landscape.jpg)
+    ![1080x2020 480dpi landscape](/screenshots/1080x2020_480dpi_landscape.jpg){: width="50%" height="50%"}
    
   * Device: size = 800x1232 (px), densityDpi = 160, diemen/size120 = 267px
   
-      ![800x1232 160dpi portrait](/screenshots/800x1232_160dpi_portrait.png)
+    ![800x1232 160dpi portrait](/screenshots/800x1232_160dpi_portrait.png){: width="25%" height="25%"}
 
-      ![800x1232 160dpi landscape](/screenshots/800x1232_160dpi_landscape.png)
+    ![800x1232 160dpi landscape](/screenshots/800x1232_160dpi_landscape.png){: width="50%" height="50%"}
       
