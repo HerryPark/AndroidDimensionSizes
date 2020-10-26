@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="layout_preview_height">@dimen/size200</dimen>
+    <dimen name="layout_preview_width">@dimen/size300</dimen>
+</resources>

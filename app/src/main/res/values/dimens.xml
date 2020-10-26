@@ -1,3 +1,4 @@
 <resources>
-    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="layout_preview_height">@dimen/size100</dimen>
+    <dimen name="layout_preview_width">@dimen/size150</dimen>
 </resources>
