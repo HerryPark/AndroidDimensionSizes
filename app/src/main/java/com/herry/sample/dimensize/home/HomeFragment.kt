@@ -25,7 +25,7 @@ class HomeFragment : Fragment() {
         homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_home, container, false)
         val text: TextView = root.findViewById(R.id.text_dimen)
-        text.text = "densityDpi = ${resources.displayMetrics.densityDpi}" +
+        text.text = "densityDpi = ${resources.displayMetrics.densityDpi}\n" +
                 "size = ${printScreenSize()}\n" +
                 "dimen/size120 is ${requireContext().resources.getDimensionPixelSize(R.dimen.size120)}px, ${dpToPx(requireContext().resources.getDimension(R.dimen.size120))}dp "
         return root
